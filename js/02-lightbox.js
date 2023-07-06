@@ -23,7 +23,7 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 //console.log(galleryItems);
-console.log("GitHub +");
+//console.log("GitHub ++");
 
 function cteateMarkupGallery(galleryItems) {
   return galleryItems.map(({ preview, original, description }) => {
@@ -37,12 +37,8 @@ function cteateMarkupGallery(galleryItems) {
 
 const galleryList = document.querySelector(".gallery");
 galleryList.insertAdjacentHTML("beforeend", cteateMarkupGallery(galleryItems).join(""));
-galleryList.addEventListener("click", handleImgClick);
 
-function handleImgClick(event) {
-  event.preventDefault();
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
